@@ -60,7 +60,7 @@ require_once("controller/controller.php");
   <button type="submit" class="submit" id="submit" name="submit">Envoyer</button> 
 </div>
 </form>
-  <div id="main">
+  <div id="main" class="justify-content-center">
     <button class="openbtn" onclick="openNav()">&#9776; </button>
     <?php
 
@@ -71,7 +71,7 @@ require_once("controller/controller.php");
     ?>
 
         <div class="container">
-            <div class="row">
+            <div class="row justify-content-center">
             <div class="banner">
                 <h1>NETFLUX</h1>
             </div>
@@ -84,12 +84,12 @@ require_once("controller/controller.php");
                     // print_r($img[1]);
                    // var_dump($jacky[0]);
                     ?>
-                    <div class="card me-3 mb-3" style="width: 18rem;">
+                    <div class="card me-3 mb-3 p-0" style="width: 18rem; border: none;">
                         <img src="<?= $image[0]['url'] ?>" class="card-img-top">
-                        <div class="card-body">
-                            <h6 class="card-title"><?= $rss->channel->item[$i]->title ?></h6>
-                            <h6 class="card-subtitle mb-2 text-muted"><?= $rss->channel->item[$i]->pubDate?></h6>
-                            <button type="button" class="btnCard " data-bs-toggle="modal" data-bs-target="#card<?=$i?>">+ d'infos</button>
+                        <div class="card-body text-center">
+                            <h6 class="card-title mt-4 mb-4"><?= $rss->channel->item[$i]->title ?></h6>
+                            <h6 class="card-subtitle mb-4 text-muted"><?= $rss->channel->item[$i]->pubDate?></h6>
+                            <button type="button" class="btnCard mb-2" data-bs-toggle="modal" data-bs-target="#card<?=$i?>">+ d'infos</button>
                         </div>
                     </div>
 

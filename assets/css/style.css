@@ -81,6 +81,8 @@
     color: #E50914;
     font-family: BebasNeue-Regular;
     src: url("../fonts/BebasNeue-Regular.otf") format("OpenType");
+    display: block;
+    margin: auto
   }
   .banner h1{
     text-align: center;
@@ -96,6 +98,7 @@
   }
 
   .card-body{
+    text-align: center; 
     background-color:#222222 ;
     color: #f1f1f1;
     font-family:  Helvetica;
