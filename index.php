@@ -26,36 +26,33 @@ require_once("controller/controller.php");
     <form method="POST">
       <h2>Flux</h2>
       <div class="radio">
-        <label><input type="radio" name="optradio">Option 1</label>
+        <input type="radio" name="flux" id="flux1" value="https://www.01net.com/rss/jeux-video/" required><label>Jeux vidéo</label>
       </div>
       <div>
         <div class="radio">
-          <label><input type="radio" name="optradio">Option 2</label>
+          <input type="radio" name="flux" id="flux2" value="https://www.01net.com/rss/actualites/technos/"><label>Technos</label>
         </div>
         <div class="radio">
-          <label><input type="radio" name="optradio">Option 3</label>
+          <input type="radio" name="flux" id="flux3" value="https://www.01net.com/rss/photo/"><label>Photo</label>
         </div>
         <div class="radio">
-          <label><input type="radio" name="optradio">Option 4</label>
+          <input type="radio" name="flux" id="flux4" value="https://www.01net.com/rss/actualites/culture-medias/"><label>Culture médias</label>
         </div>
         <div class="radio">
-          <label><input type="radio" name="optradio">Option 5</label>
+          <input type="radio" name="flux" id="flux5" value="https://www.01net.com/rss/actualites/buzz-societe/"><label>Buzz</label>
         </div>
       </div>
    
     <h2>Nombre d'articles</h2>
     <div class="radio2" >
-      <label><input type="radio" name="choix" id="choix" value="5">5</label>
+      <label><input type="radio" name="choix" id="choix" value="5" required>5</label>
     </div>
     <div class="radio2">
-      <label><input type="radio" name="choix" id="choix2" value="9"> 9</label>
+      <label><input type="radio" name="choix" id="choix2" value="10"> 10</label>
     </div>
     <div class="radio2">
-      <label><input type="radio" name="choix" id="choix3" value="10">Tout</label>
+      <label><input type="radio" name="choix" id="choix3" value="15">Tout</label>
     </div>
-    <div><button type="button" class="btn btn-primary">Primary</button></div>
-    <div> <button type="button" class="btn btn-secondary">Secondary</button> </div>
-    <div> <button type="button" class="btn btn-success">Success</button> </div>
   </div>
   <button type="submit" class="submit" id="submit" name="submit">Envoyer</button> 
 </div>
@@ -64,8 +61,8 @@ require_once("controller/controller.php");
     <button class="openbtn" onclick="openNav()">&#9776; </button>
     <?php
 
-    $url = "https://www.01net.com/rss/jeux-video/";
-    $rss = simplexml_load_file($url);
+    // $url = "https://www.01net.com/rss/jeux-video/";
+    // $rss = simplexml_load_file($url);
      //echo '<pre>';
     // print_r($rss);
     ?>
@@ -74,6 +71,7 @@ require_once("controller/controller.php");
             <div class="row justify-content-center">
                 <div class="banner">
                     <h1>NETFLUX</h1>
+                    <h5><?= $rss->channel->title ?></h5>
                 </div>
                 <?php        
                     setlocale(LC_TIME, "fra.UTF8");
@@ -87,7 +85,7 @@ require_once("controller/controller.php");
 
                         ?>
                         <div class="card me-3 mb-3 p-0" style="width: 18rem; border: none;">
-                            <img src="<?= $image[0]['url'] ?>" class="card-img-top">
+                            <img src="<?= $image[0]['url'] ?>" class="card-img-top d-block img-fluid" style="height: 200px;" >
                             <div class="card-header text-end">
                                 <?= $pub ?>
                             </div>
