@@ -79,7 +79,7 @@ require_once("controller/controller.php");
                     $image = $rss->channel->item[$i]->enclosure;
                     //var_dump($image[0]['url']);
                     $descri = $rss->channel->item[$i]->description;
-                    $jacky = explode("<br /><br />", $descri);
+                    $jacky = explode("<br", $descri);
                     // print_r($img[1]);
                    // var_dump($jacky[0]);
                     ?>
@@ -88,7 +88,7 @@ require_once("controller/controller.php");
                         <div class="card-body">
                             <h6 class="card-title"><?= $rss->channel->item[$i]->title ?></h6>
                             <h6 class="card-subtitle mb-2 text-muted"><?= $rss->channel->item[$i]->pubDate?></h6>
-                            <button type="button" class="btn btnCard justify-content-center" data-bs-toggle="modal" data-bs-target="#card<?=$i?>">+ d'infos</button>
+                            <button type="button" class="btnCard" data-bs-toggle="modal" data-bs-target="#card<?=$i?>">+ d'infos</button>
                         </div>
                     </div>
 
