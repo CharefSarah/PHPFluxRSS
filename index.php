@@ -12,17 +12,18 @@ require_once("controller/controller.php");
   <title></title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-  <!-- CSS -->
   <link href="assets/css/style.css" rel="stylesheet">
   <link rel="icon" href="assets/img/icon_1.ico">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
 </head>
 
 <body>
+
   <div id="mySidebar" class="sidebar">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <div>
+    <form method="POST">
       <h2>Flux</h2>
       <div class="radio">
         <label><input type="radio" name="optradio">Option 1</label>
@@ -41,25 +42,26 @@ require_once("controller/controller.php");
           <label><input type="radio" name="optradio">Option 5</label>
         </div>
       </div>
-    </div>
-    <h2>articles</h2>
-    <div class="radio2">
-      <label><input type="radio" name="optradio2">4</label>
-    </div>
-    <div class="radio2">
-      <label><input type="radio" name="optradio2">8</label>
+   
+    <h2>Nombre d'articles</h2>
+    <div class="radio2" >
+      <label><input type="radio" name="choix" id="choix" value="5">5</label>
     </div>
     <div class="radio2">
-      <label><input type="radio" name="optradio2">Tout</label>
+      <label><input type="radio" name="choix" id="choix2" value="9"> 9</label>
+    </div>
+    <div class="radio2">
+      <label><input type="radio" name="choix" id="choix3" value="10">Tout</label>
     </div>
     <div><button type="button" class="btn btn-primary">Primary</button></div>
     <div> <button type="button" class="btn btn-secondary">Secondary</button> </div>
     <div> <button type="button" class="btn btn-success">Success</button> </div>
   </div>
-
+  <button type="submit" class="submit" id="submit" name="submit">Envoyer</button> 
+</div>
+</form>
   <div id="main">
     <button class="openbtn" onclick="openNav()">&#9776; </button>
-
     <?php
 
     $url = "https://www.01net.com/rss/jeux-video/";
@@ -69,15 +71,14 @@ require_once("controller/controller.php");
     ?>
 
         <div class="container">
-            
-            <div class="row justify-content-center">
+            <div class="row">
             <div class="banner">
                 <h1>NETFLUX</h1>
             </div>
-            <?php               
-                for($i = 0;$i <20;$i++){
+            <?php        
+            
+                for($i = 0;$i < $nmbCards;$i++){
                     $image = $rss->channel->item[$i]->enclosure;
-                    //var_dump($image[0]['url']);
                     $descri = $rss->channel->item[$i]->description;
                     $jacky = explode("<br", $descri);
                     // print_r($img[1]);
@@ -88,7 +89,7 @@ require_once("controller/controller.php");
                         <div class="card-body">
                             <h6 class="card-title"><?= $rss->channel->item[$i]->title ?></h6>
                             <h6 class="card-subtitle mb-2 text-muted"><?= $rss->channel->item[$i]->pubDate?></h6>
-                            <button type="button" class="btnCard" data-bs-toggle="modal" data-bs-target="#card<?=$i?>">+ d'infos</button>
+                            <button type="button" class="btnCard " data-bs-toggle="modal" data-bs-target="#card<?=$i?>">+ d'infos</button>
                         </div>
                     </div>
 

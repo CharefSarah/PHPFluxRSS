@@ -20,6 +20,7 @@
     color: #818181;
     display: block;
     transition: 0.3s;
+    
   }
   
   /* When you mouse over the navigation links, change their color */
@@ -68,6 +69,10 @@
     font-family: BebasNeue-Regular;
     src: url("../fonts/BebasNeue-Regular.otf") format("OpenType");
   }
+  @font-face {
+    font-family:  Helvetica;
+    src: url("../fonts/Helvetica.ttf") format("TrueType");
+  }
   
 
   /* banner */
@@ -82,6 +87,20 @@
     font-size: 100px;
   }
   .btnCard{
-    background-color: black;
-    color: #E50914;
+    background-color: rgb(255, 255, 255);
+    color: #030303;
+    display: block;
+    margin: auto;
+    border-radius: 20px;
+    border-style: none;
   }
+
+  .card-body{
+    background-color:#222222 ;
+    color: #f1f1f1;
+    font-family:  Helvetica;
+    src: url("../fonts/Helvetica.ttf") format("TrueType");
+  }
+.card-title, .card-subtitle{
+ font-size: 15px;
+}
