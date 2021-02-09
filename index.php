@@ -13,8 +13,8 @@ require_once("controller/controller.php");
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="assets/css/style.css" rel="stylesheet">
+  <link rel="icon" href="assets/img/icon_1.ico">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-  
 
 </head>
 
@@ -45,13 +45,13 @@ require_once("controller/controller.php");
    
     <h2>Nombre d'articles</h2>
     <div class="radio2" >
-      <label><input type="radio" name="choix1" class="choix" value="5">5</label>
+      <label><input type="radio" name="choix" id="choix" value="5">5</label>
     </div>
     <div class="radio2">
-      <label><input type="radio" name="choix2" class="choix" value="9"> 9</label>
+      <label><input type="radio" name="choix" id="choix2" value="9"> 9</label>
     </div>
     <div class="radio2">
-      <label><input type="radio" name="choix3" class="choix" value=10>Tout</label>
+      <label><input type="radio" name="choix" id="choix3" value="10">Tout</label>
     </div>
     <div><button type="button" class="btn btn-primary">Primary</button></div>
     <div> <button type="button" class="btn btn-secondary">Secondary</button> </div>
@@ -62,7 +62,6 @@ require_once("controller/controller.php");
 </form>
   <div id="main">
     <button class="openbtn" onclick="openNav()">&#9776; </button>
-    <h1>NETFLUX</h1>
     <?php
 
     $url = "https://www.01net.com/rss/jeux-video/";
@@ -73,47 +72,50 @@ require_once("controller/controller.php");
 
         <div class="container">
             <div class="row">
+            <div class="banner">
+                <h1>NETFLUX</h1>
+            </div>
             <?php        
             
                 for($i = 0;$i < $nmbCards;$i++){
                     $descri = $rss->channel->item[$i]->description;
-                    $jacky = explode("<br/><br/>", $descri);
-                    $img = explode('"', $jacky[1]);
+                    $jacky = explode("<br /><br />", $descri);
+                    $image = $rss->channel->item[$i]->enclosure;
                     // print_r($img[1]);
-                    // var_dump($jacky[1]);
+                   // var_dump($jacky[0]);
                     ?>
-                    <div class="card" style="width: 18rem;">
-                        <img src="<?= $img[1] ?>" class="card-img-top">
+                    <div class="card me-3 mb-3" style="width: 18rem;">
+                        <img src="<?= $image[0]['url'] ?>" class="card-img-top">
                         <div class="card-body">
                             <h6 class="card-title"><?= $rss->channel->item[$i]->title ?></h6>
                             <h6 class="card-subtitle mb-2 text-muted"><?= $rss->channel->item[$i]->pubDate?></h6>
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#card<?=$i?>">+ d'infos</button>
+                            <button type="button" class="btnCard " data-bs-toggle="modal" data-bs-target="#card<?=$i?>">+ d'infos</button>
                         </div>
                     </div>
 
-        <div class="modal fade" id="card<?= $i ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content d-flex justify-content-center text-center p-5">
-              <a class=" btn text-white btnCustom" data-bs-dismiss="modal">x</a>
-              <div class="p-5 border border-white">
-                <div class="row">
-                  <div class="col-md-12">
-                    <p><?= $jacky[0] ?></p>
-                  </div>
-                  <div class="col-md-12">
-                    <div class="d-flex justify-content-center text-center mt-3">
-                      <h4><?= $rss->channel->item[$i]->title ?></h4>
+                    <div class="modal fade" id="card<?= $i ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content d-flex justify-content-center text-center p-5">
+                                <a class="btn" data-bs-dismiss="modal">x</a>
+                                <div class="p-5 border border-white">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <p><?= $jacky[0] ?></p>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="d-flex justify-content-center text-center mt-3">
+                                            <h4><?= $rss->channel->item[$i]->title ?></h4>
+                                            </div>
+                                            <div class="col-md-4 mx-auto d-flex justify-content-center text-center mt-1 mb-2">
+                                            <p><?= $rss->channel->item[$i]->pubDate ?></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-md-4 mx-auto d-flex justify-content-center text-center mt-1 mb-2">
-                      <p><?= $rss->channel->item[$i]->pubDate ?></p>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
-          </div>
-        </div>
-      <?php } ?>
+        <?php } ?>
     </div>
 </body>
 <!-- JavaScript Bundle with Popper -->

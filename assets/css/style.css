@@ -65,11 +65,42 @@
     .sidebar a {font-size: 18px;}
   }
 
-
   @font-face {
-    font-family: NeueWorld;
-    src: url("../fonts/NeueWorld.ttf") format("TrueType");
-}
+    font-family: BebasNeue-Regular;
+    src: url("../fonts/BebasNeue-Regular.otf") format("OpenType");
+  }
+  @font-face {
+    font-family:  Helvetica;
+    src: url("../fonts/Helvetica.ttf") format("TrueType");
+  }
+  
 
-  
-  
+  /* banner */
+  #main{
+    background-color: black;
+    color: #E50914;
+    font-family: BebasNeue-Regular;
+    src: url("../fonts/BebasNeue-Regular.otf") format("OpenType");
+  }
+  .banner h1{
+    text-align: center;
+    font-size: 100px;
+  }
+  .btnCard{
+    background-color: rgb(255, 255, 255);
+    color: #030303;
+    display: block;
+    margin: auto;
+    border-radius: 20px;
+    border-style: none;
+  }
+
+  .card-body{
+    background-color:#222222 ;
+    color: #f1f1f1;
+    font-family:  Helvetica;
+    src: url("../fonts/Helvetica.ttf") format("TrueType");
+  }
+.card-title, .card-subtitle{
+ font-size: 15px;
+}
