@@ -26,20 +26,20 @@ require_once("controller/controller.php");
     <form method="POST">
       <h2>Flux</h2>
       <div class="radio">
-        <input type="radio" name="flux" id="flux1" value="https://www.01net.com/rss/jeux-video/" required><label>Jeux vidéo</label>
+        <input type="radio" name="flux" id="flux1" value="https://www.01net.com/rss/jeux-video/" required><label for="flux1">Jeux vidéo</label>
       </div>
       <div>
         <div class="radio">
-          <input type="radio" name="flux" id="flux2" value="https://www.01net.com/rss/actualites/technos/"><label>Technos</label>
+          <input type="radio" name="flux" id="flux2" value="https://www.01net.com/rss/actualites/technos/"><label for="flux2">Technos</label>
         </div>
         <div class="radio">
-          <input type="radio" name="flux" id="flux3" value="https://www.01net.com/rss/photo/"><label>Photo</label>
+          <input type="radio" name="flux" id="flux3" value="https://www.01net.com/rss/photo/"><label  for="flux3">Photo</label>
         </div>
         <div class="radio">
-          <input type="radio" name="flux" id="flux4" value="https://www.01net.com/rss/actualites/culture-medias/"><label>Culture médias</label>
+          <input type="radio" name="flux" id="flux4" value="https://www.01net.com/rss/actualites/culture-medias/"><label  for="flux4">Culture médias</label>
         </div>
         <div class="radio">
-          <input type="radio" name="flux" id="flux5" value="https://www.01net.com/rss/actualites/buzz-societe/"><label>Buzz</label>
+          <input type="radio" name="flux" id="flux5" value="https://www.01net.com/rss/actualites/buzz-societe/"><label  for="flux5">Buzz</label>
         </div>
       </div>
    
