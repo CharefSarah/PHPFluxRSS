@@ -72,54 +72,56 @@ require_once("controller/controller.php");
 
         <div class="container">
             <div class="row justify-content-center">
-            <div class="banner">
-                <h1>NETFLUX</h1>
-            </div>
-            <?php        
-                setlocale(LC_TIME, "fra.UTF8");
-                for($i = 0;$i < $nmbCards;$i++){
-                    $image = $rss->channel->item[$i]->enclosure;
-                    $descri = $rss->channel->item[$i]->description;
-                    $jacky = explode("<br", $descri);
+                <div class="banner">
+                    <h1>NETFLUX</h1>
+                </div>
+                <?php        
+                    setlocale(LC_TIME, "fra.UTF8");
+                    for($i = 0;$i < $nmbCards;$i++){
+                        $image = $rss->channel->item[$i]->enclosure;
+                        $descri = $rss->channel->item[$i]->description;
+                        $jacky = explode("<br", $descri);
 
-                    $date = strtotime($rss->channel->item[$i]->pubDate);
-                    $pub = strftime("%e %B %Y", $date);
+                        $date = strtotime($rss->channel->item[$i]->pubDate);
+                        $pub = strftime("%e %B %Y", $date);
 
-                    ?>
-                    <div class="card me-3 mb-3 p-0" style="width: 18rem; border: none;">
-                        <img src="<?= $image[0]['url'] ?>" class="card-img-top">
-                        <div class="card-header text-end">
-                            <?= $pub ?>
+                        ?>
+                        <div class="card me-3 mb-3 p-0" style="width: 18rem; border: none;">
+                            <img src="<?= $image[0]['url'] ?>" class="card-img-top">
+                            <div class="card-header text-end">
+                                <?= $pub ?>
+                            </div>
+                            <div class="card-body text-center">
+                                <h6 class="card-title mt-4 mb-4"><?= $rss->channel->item[$i]->title ?></h6>
+                                <button type="button" class="btnCard" data-bs-toggle="modal" data-bs-target="#card<?=$i?>">Infos</button>
+                            </div>
                         </div>
-                        <div class="card-body text-center">
-                            <h6 class="card-title mt-4 mb-4"><?= $rss->channel->item[$i]->title ?></h6>
-                            <button type="button" class="btnCard" data-bs-toggle="modal" data-bs-target="#card<?=$i?>">Infos</button>
-                        </div>
-                    </div>
 
-                    <div class="modal fade" id="card<?= $i ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content d-flex justify-content-center text-center p-5">
-                                <a class="btn" data-bs-dismiss="modal">x</a>
-                                <div class="p-5 border border-white">
+                        <div class="modal fade" id="card<?= $i ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title"><?= $rss->channel->item[$i]->title ?></h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>  
+                                    <div class="modal-body">
+                                        <img src="<?= $image[0]['url'] ?>" class="d-block img-fluid">
+                                        <p><?=$jacky[0]?></p>
+                                    </div>
                                     <div class="row">
-                                        <div class="col-md-12">
-                                            <p><?= $jacky[0] ?></p>
+                                        <div class="col-md-6 text-start">
+                                            <span><?= $pub ?></span>
                                         </div>
-                                        <div class="col-md-12">
-                                            <div class="d-flex justify-content-center text-center mt-3">
-                                            <h4><?= $rss->channel->item[$i]->title ?></h4>
-                                            </div>
-                                            <div class="col-md-4 mx-auto d-flex justify-content-center text-center mt-1 mb-2">
-                                            <p><?= $rss->channel->item[$i]->pubDate ?></p>
+                                        <div class="col-md-6 text-end">
+                                            <a href="<?= $rss->channel->item[$i]->link ?>">Lien</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    <?php } ?>
             </div>
-        <?php } ?>
+        </div>
     </div>
 </body>
 <!-- JavaScript Bundle with Popper -->
