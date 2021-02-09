@@ -76,20 +76,24 @@ require_once("controller/controller.php");
                 <h1>NETFLUX</h1>
             </div>
             <?php        
-            
+                setlocale(LC_TIME, "fra.UTF8");
                 for($i = 0;$i < $nmbCards;$i++){
                     $image = $rss->channel->item[$i]->enclosure;
                     $descri = $rss->channel->item[$i]->description;
                     $jacky = explode("<br", $descri);
-                    // print_r($img[1]);
-                   // var_dump($jacky[0]);
+
+                    $date = strtotime($rss->channel->item[$i]->pubDate);
+                    $pub = strftime("%e %B %Y", $date);
+
                     ?>
                     <div class="card me-3 mb-3 p-0" style="width: 18rem; border: none;">
                         <img src="<?= $image[0]['url'] ?>" class="card-img-top">
+                        <div class="card-header text-end">
+                            <?= $pub ?>
+                        </div>
                         <div class="card-body text-center">
                             <h6 class="card-title mt-4 mb-4"><?= $rss->channel->item[$i]->title ?></h6>
-                            <h6 class="card-subtitle mb-4 text-muted"><?= $rss->channel->item[$i]->pubDate?></h6>
-                            <button type="button" class="btnCard mb-2" data-bs-toggle="modal" data-bs-target="#card<?=$i?>">+ d'infos</button>
+                            <button type="button" class="btnCard" data-bs-toggle="modal" data-bs-target="#card<?=$i?>">Infos</button>
                         </div>
                     </div>
 

@@ -84,18 +84,22 @@
     display: block;
     margin: auto
   }
+
   .banner h1{
     text-align: center;
     font-size: 100px;
   }
   .btnCard{
     background-color: rgb(255, 255, 255);
-    color: #030303;
+    color: #222222;
+    font-weight: bold;
     display: block;
     margin: auto;
     border-radius: 20px;
     border-style: none;
+    outline: none !important;
   }
+  
 
   .card-body{
     text-align: center; 
