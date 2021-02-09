@@ -15,7 +15,6 @@ require_once("controller/controller.php");
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
   <!-- CSS -->
   <link href="assets/css/style.css" rel="stylesheet">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="icon" href="assets/img/icon_1.ico">
 
 </head>
@@ -43,7 +42,7 @@ require_once("controller/controller.php");
         </div>
       </div>
     </div>
-    <h2>Nombre d'articles</h2>
+    <h2>articles</h2>
     <div class="radio2">
       <label><input type="radio" name="optradio2">4</label>
     </div>
@@ -70,47 +69,52 @@ require_once("controller/controller.php");
     ?>
 
         <div class="container">
-            <div class="row">
+            
+            <div class="row justify-content-center">
+            <div class="banner">
+                <h1>NETFLUX</h1>
+            </div>
             <?php               
-                for($i = 0;$i < 10;$i++){
+                for($i = 0;$i <20;$i++){
+                    $image = $rss->channel->item[$i]->enclosure;
+                    //var_dump($image[0]['url']);
                     $descri = $rss->channel->item[$i]->description;
-                    $jacky = explode("<br/><br/>", $descri);
-                    $img = explode('"', $jacky[1]);
+                    $jacky = explode("<br /><br />", $descri);
                     // print_r($img[1]);
-                    // var_dump($jacky[1]);
+                   // var_dump($jacky[0]);
                     ?>
-                    <div class="card" style="width: 18rem;">
-                        <img src="<?= $img[1] ?>" class="card-img-top">
+                    <div class="card me-3 mb-3" style="width: 18rem;">
+                        <img src="<?= $image[0]['url'] ?>" class="card-img-top">
                         <div class="card-body">
                             <h6 class="card-title"><?= $rss->channel->item[$i]->title ?></h6>
                             <h6 class="card-subtitle mb-2 text-muted"><?= $rss->channel->item[$i]->pubDate?></h6>
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#card<?=$i?>">+ d'infos</button>
+                            <button type="button" class="btn btnCard justify-content-center" data-bs-toggle="modal" data-bs-target="#card<?=$i?>">+ d'infos</button>
                         </div>
                     </div>
 
-        <div class="modal fade" id="card<?= $i ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content d-flex justify-content-center text-center p-5">
-              <a class=" btn text-white btnCustom" data-bs-dismiss="modal">x</a>
-              <div class="p-5 border border-white">
-                <div class="row">
-                  <div class="col-md-12">
-                    <p><?= $jacky[0] ?></p>
-                  </div>
-                  <div class="col-md-12">
-                    <div class="d-flex justify-content-center text-center mt-3">
-                      <h4><?= $rss->channel->item[$i]->title ?></h4>
+                    <div class="modal fade" id="card<?= $i ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content d-flex justify-content-center text-center p-5">
+                                <a class="btn" data-bs-dismiss="modal">x</a>
+                                <div class="p-5 border border-white">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <p><?= $jacky[0] ?></p>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="d-flex justify-content-center text-center mt-3">
+                                            <h4><?= $rss->channel->item[$i]->title ?></h4>
+                                            </div>
+                                            <div class="col-md-4 mx-auto d-flex justify-content-center text-center mt-1 mb-2">
+                                            <p><?= $rss->channel->item[$i]->pubDate ?></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-md-4 mx-auto d-flex justify-content-center text-center mt-1 mb-2">
-                      <p><?= $rss->channel->item[$i]->pubDate ?></p>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
-          </div>
-        </div>
-      <?php } ?>
+        <?php } ?>
     </div>
 </body>
 <!-- JavaScript Bundle with Popper -->

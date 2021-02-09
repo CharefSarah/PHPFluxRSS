@@ -64,5 +64,25 @@
     .sidebar a {font-size: 18px;}
   }
 
+  @font-face {
+    font-family: BebasNeue-Regular;
+    src: url("../fonts/BebasNeue-Regular.otf") format("OpenType");
+  }
   
-  
+
+  /* banner */
+  #main{
+    background-color: black;
+    color: #E50914;
+    font-family: BebasNeue-Regular;
+    src: url("../fonts/BebasNeue-Regular.otf") format("OpenType");
+  }
+  .banner h1{
+    text-align: center;
+    font-size: 100px;
+  }
+  .btnCard{
+    
+    background-color: black;
+    color: #E50914;
+  }
