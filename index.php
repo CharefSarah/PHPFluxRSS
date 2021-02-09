@@ -27,24 +27,27 @@ require_once("controller/controller.php");
 
   <div id="main">
     <button class="openbtn" onclick="openNav()">&#9776; </button>
+
     <?php
 
     $url = "https://www.01net.com/rss/jeux-video/";
     $rss = simplexml_load_file($url);
-    // echo '<pre>';
+     //echo '<pre>';
     // print_r($rss);
-    // echo $rss->channel->item[0]->title;
-?>
+    ?>
 
         <div class="container">
-            <?php
-                
-                for($i = 0;$i < 5;$i++){
+            <div class="row">
+            <?php               
+                for($i = 0;$i < 10;$i++){
                     $descri = $rss->channel->item[$i]->description;
                     $jacky = explode("<br/><br/>", $descri);
-                    //echo $jacky[0];
+                    $img = explode('"', $jacky[1]);
+                    // print_r($img[1]);
+                    // var_dump($jacky[1]);
                     ?>
-                    <div class="card">
+                    <div class="card" style="width: 18rem;">
+                        <img src="<?= $img[1] ?>" class="card-img-top">
                         <div class="card-body">
                             <h6 class="card-title"><?= $rss->channel->item[$i]->title ?></h6>
                             <h6 class="card-subtitle mb-2 text-muted"><?= $rss->channel->item[$i]->pubDate?></h6>
@@ -75,9 +78,10 @@ require_once("controller/controller.php");
                         </div>
                     </div>
                 <?php } ?>
+            </div>
         </div>
     </body>
         <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
-    <script src="assets/css/style.css"></script> 
+    <script src="assets/js/script.js"></script> 
 </html>
