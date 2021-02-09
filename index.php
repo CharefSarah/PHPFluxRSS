@@ -17,7 +17,12 @@
     <body>
         <div class="container">
             <?php
-                for($i = 0;$i < 10;$i++){?>
+                
+                for($i = 0;$i < 5;$i++){
+                    $descri = $rss->channel->item[$i]->description;
+                    $jacky = explode("<br/><br/>", $descri);
+                    //echo $jacky[0];
+                    ?>
                     <div class="card">
                         <div class="card-body">
                             <h6 class="card-title"><?= $rss->channel->item[$i]->title ?></h6>
@@ -33,7 +38,7 @@
                                 <div class="p-5 border border-white">
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <p><?= $rss->channel->item[$i]->description ?></p>
+                                            <p><?= $jacky[0] ?></p>
                                         </div>
                                         <div class="col-md-12">
                                             <div class="d-flex justify-content-center text-center mt-3">
