@@ -23,6 +23,39 @@ require_once("controller/controller.php");
 <body>
   <div id="mySidebar" class="sidebar">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <div>
+      <h2>Flux</h2>
+      <div class="radio">
+        <label><input type="radio" name="optradio">Option 1</label>
+      </div>
+      <div>
+        <div class="radio">
+          <label><input type="radio" name="optradio">Option 2</label>
+        </div>
+        <div class="radio">
+          <label><input type="radio" name="optradio">Option 3</label>
+        </div>
+        <div class="radio">
+          <label><input type="radio" name="optradio">Option 4</label>
+        </div>
+        <div class="radio">
+          <label><input type="radio" name="optradio">Option 5</label>
+        </div>
+      </div>
+    </div>
+    <h2>Nombre d'articles</h2>
+    <div class="radio2">
+      <label><input type="radio" name="optradio2">4</label>
+    </div>
+    <div class="radio2">
+      <label><input type="radio" name="optradio2">8</label>
+    </div>
+    <div class="radio2">
+      <label><input type="radio" name="optradio2">Tout</label>
+    </div>
+    <div><button type="button" class="btn btn-primary">Primary</button></div>
+    <div> <button type="button" class="btn btn-secondary">Secondary</button> </div>
+    <div> <button type="button" class="btn btn-success">Success</button> </div>
   </div>
 
   <div id="main">
@@ -34,50 +67,51 @@ require_once("controller/controller.php");
     // echo '<pre>';
     // print_r($rss);
     // echo $rss->channel->item[0]->title;
-?>
+    ?>
+    <h1>NETFLUX</h1>
+    <div class="container">
+      <?php
 
-        <div class="container">
-            <?php
-                
-                for($i = 0;$i < 5;$i++){
-                    $descri = $rss->channel->item[$i]->description;
-                    $jacky = explode("<br/><br/>", $descri);
-                    //echo $jacky[0];
-                    ?>
-                    <div class="card">
-                        <div class="card-body">
-                            <h6 class="card-title"><?= $rss->channel->item[$i]->title ?></h6>
-                            <h6 class="card-subtitle mb-2 text-muted"><?= $rss->channel->item[$i]->pubDate?></h6>
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#card<?=$i?>">+ d'infos</button>
-                        </div>
-                    </div>
-
-                    <div class="modal fade" id="card<?=$i?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content d-flex justify-content-center text-center p-5">
-                                <a class=" btn text-white btnCustom" data-bs-dismiss="modal">x</a>
-                                <div class="p-5 border border-white">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <p><?= $jacky[0] ?></p>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="d-flex justify-content-center text-center mt-3">
-                                                <h4><?= $rss->channel->item[$i]->title ?></h4>
-                                            </div>
-                                            <div class="col-md-4 mx-auto d-flex justify-content-center text-center mt-1 mb-2">
-                                                <p><?= $rss->channel->item[$i]->pubDate ?></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                <?php } ?>
+      for ($i = 0; $i < 5; $i++) {
+        $descri = $rss->channel->item[$i]->description;
+        $jacky = explode("<br/><br/>", $descri);
+        //echo $jacky[0];
+      ?>
+        <div class="card">
+          <div class="card-body">
+            <h6 class="card-title"><?= $rss->channel->item[$i]->title ?></h6>
+            <h6 class="card-subtitle mb-2 text-muted"><?= $rss->channel->item[$i]->pubDate ?></h6>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#card<?= $i ?>">+ d'infos</button>
+          </div>
         </div>
-    </body>
-        <!-- JavaScript Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
-    <script src="assets/css/style.css"></script> 
+
+        <div class="modal fade" id="card<?= $i ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content d-flex justify-content-center text-center p-5">
+              <a class=" btn text-white btnCustom" data-bs-dismiss="modal">x</a>
+              <div class="p-5 border border-white">
+                <div class="row">
+                  <div class="col-md-12">
+                    <p><?= $jacky[0] ?></p>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="d-flex justify-content-center text-center mt-3">
+                      <h4><?= $rss->channel->item[$i]->title ?></h4>
+                    </div>
+                    <div class="col-md-4 mx-auto d-flex justify-content-center text-center mt-1 mb-2">
+                      <p><?= $rss->channel->item[$i]->pubDate ?></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <?php } ?>
+    </div>
+</body>
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+<script src="assets/js/script.js" async defer></script>
+
 </html>
