@@ -60,30 +60,33 @@ require_once("controller/controller.php");
 
   <div id="main">
     <button class="openbtn" onclick="openNav()">&#9776; </button>
+
     <?php
 
     $url = "https://www.01net.com/rss/jeux-video/";
     $rss = simplexml_load_file($url);
-    // echo '<pre>';
+     //echo '<pre>';
     // print_r($rss);
-    // echo $rss->channel->item[0]->title;
     ?>
-    <h1>NETFLUX</h1>
-    <div class="container">
-      <?php
 
-      for ($i = 0; $i < 5; $i++) {
-        $descri = $rss->channel->item[$i]->description;
-        $jacky = explode("<br/><br/>", $descri);
-        //echo $jacky[0];
-      ?>
-        <div class="card">
-          <div class="card-body">
-            <h6 class="card-title"><?= $rss->channel->item[$i]->title ?></h6>
-            <h6 class="card-subtitle mb-2 text-muted"><?= $rss->channel->item[$i]->pubDate ?></h6>
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#card<?= $i ?>">+ d'infos</button>
-          </div>
-        </div>
+        <div class="container">
+            <div class="row">
+            <?php               
+                for($i = 0;$i < 10;$i++){
+                    $descri = $rss->channel->item[$i]->description;
+                    $jacky = explode("<br/><br/>", $descri);
+                    $img = explode('"', $jacky[1]);
+                    // print_r($img[1]);
+                    // var_dump($jacky[1]);
+                    ?>
+                    <div class="card" style="width: 18rem;">
+                        <img src="<?= $img[1] ?>" class="card-img-top">
+                        <div class="card-body">
+                            <h6 class="card-title"><?= $rss->channel->item[$i]->title ?></h6>
+                            <h6 class="card-subtitle mb-2 text-muted"><?= $rss->channel->item[$i]->pubDate?></h6>
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#card<?=$i?>">+ d'infos</button>
+                        </div>
+                    </div>
 
         <div class="modal fade" id="card<?= $i ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
