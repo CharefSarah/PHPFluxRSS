@@ -106,14 +106,15 @@ require_once("controller/controller.php");
                                     </div>  
                                     <div class="modal-body">
                                         <img src="<?= $image[0]['url'] ?>" class="d-block img-fluid">
-                                        <p><?=$jacky[0]?></p>
+                                        <p class="mt-4"><?=$jacky[0]?></p>
+                                        <hr>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-6 text-start">
-                                            <span><?= $pub ?></span>
+                                            <span class="m-2"><?= $pub ?></span>
                                         </div>
                                         <div class="col-md-6 text-end">
-                                            <a href="<?= $rss->channel->item[$i]->link ?>">Lien</a>
+                                            <a href="<?= $rss->channel->item[$i]->link ?>" target="_blank" class="btn text-white bg-dark m-2">Lien</a>
                                         </div>
                                     </div>
                                 </div>
