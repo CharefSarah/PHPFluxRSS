@@ -85,7 +85,14 @@
   font-family: Helvetica;
   src: url("../fonts/Helvetica.ttf") format("TrueType");
 }
-
+@font-face{
+  font-family: Hanson;
+  src: url("../fonts/Hanson") format("OpenType");
+}
+@font-face{
+  font-family: Montserrat;
+  src: url("../fonts/Montserrat.ttf") format("TrueType");
+}
 .h2Titre {
 
   color: #ffffff;
@@ -140,6 +147,10 @@
   font-family: Montserrat;
   src: url("../fonts/Montserrat.ttf") format("TrueType");
 
+}
+.card-header{
+  color:rgb(0, 26, 255);
+  font-weight: bold;
 }
 
 .card-title,

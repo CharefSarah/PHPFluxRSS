@@ -134,10 +134,14 @@
     src: url("../fonts/BebasNeue-Regular.otf") format("OpenType");
     border-radius: 20px;
     border: none;
-  
+    text-decoration: none;
+    outline: none;
   }
   .submit:hover{
-    background-color: white;;
+    background-color: white;
+    border: none;
+    text-decoration: none;
+    outline: none;
   }
   .param{
     color: rgb(255, 0, 128);
@@ -151,8 +155,9 @@
       font-family:  Helvetica;
       src: url("../fonts/Helvetica.ttf") format("TrueType");
       background-image: url(../img/leopard.jpg);
-      color: white; 
-      font-size: 30px;
+      color: white !important; 
+      font-size: 15px;
+      text-shadow: 1px;
   }
   .linkArticle{
     color: white !important;
