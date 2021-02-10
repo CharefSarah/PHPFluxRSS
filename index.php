@@ -12,7 +12,23 @@ require_once("controller/controller.php");
   <title></title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="assets/css/style.css" rel="stylesheet">
+  <?php
+    if(isset($_POST['submit'])){
+      if(isset($_POST['theme']) && $_POST['theme'] == "default"){?>
+          <link href="assets/css/style.css" rel="stylesheet">
+      <?php
+      }elseif(isset($_POST['theme']) && $_POST['theme'] == "licorne"){?>
+        <link href="assets/css/style.css" rel="stylesheet">
+      <?php
+      }elseif(isset($_POST['theme']) && $_POST['theme'] == "jacky"){?>
+        <link href="assets/css/style.css" rel="stylesheet">
+      <?php
+      }
+    }else{?>
+      <link href="assets/css/style.css" rel="stylesheet">
+    <?php
+    }
+  ?>
   <link rel="icon" href="assets/img/icon_1.ico">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
@@ -61,13 +77,13 @@ require_once("controller/controller.php");
       <h2 class="h2Titre mt-3">Thèmes</h2>
       <div class="ms-5 p-0 mt-3 param">
         <div class="radio2" >
-          <input type="radio" name="choix" id="theme1" value="default"><label class="ms-2" for="theme1">Default</label>
+          <input type="radio" name="theme" id="theme1" value="default"><label class="ms-2" for="theme1">Default</label>
         </div>
         <div class="radio2">
-          <input type="radio" name="choix" id="theme2" value="licorne"><label class="ms-2" for="theme2">Licorne</label>
+          <input type="radio" name="theme" id="theme2" value="licorne"><label class="ms-2" for="theme2">Licorne</label>
         </div>
         <div class="radio2">
-          <input type="radio" name="choix" id="theme3" value="jacky"><label class="ms-2" for="theme3">Jacky Tuning</label>
+          <input type="radio" name="theme" id="theme3" value="jacky"><label class="ms-2" for="theme3">Jacky Tuning</label>
         </div>
         
       </div>
