@@ -1,6 +1,7 @@
 <?php
 
 $nmbCards = "";
+$themes = ""; 
 
 if (isset($_POST['submit'])) {
     if (!empty($_POST['choix']) && $_POST["choix"] == 5){
