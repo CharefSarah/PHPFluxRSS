@@ -24,6 +24,10 @@ require_once("controller/controller.php");
         <link href="assets/css/jacky.css" rel="stylesheet">
       <?php
       }
+      elseif(isset($_POST['theme']) && $_POST['theme'] == "bflux"){?>
+        <link href="assets/css/bflux.css" rel="stylesheet">
+      <?php
+      }
     }else{?>
       <link href="assets/css/jacky.css" rel="stylesheet">
     <?php
@@ -85,10 +89,13 @@ require_once("controller/controller.php");
         <div class="radio2">
           <input type="radio" name="theme" id="theme3" value="jacky" <?= isset($_POST['theme']) && $_POST['theme']=="jacky" ? "checked" : "" ?>><label class="ms-2" for="theme3">Jacky Tuning</label>
         </div>
+        <div class="radio2">
+          <input type="radio" name="theme" id="theme4" value="bflux" <?= isset($_POST['theme']) && $_POST['theme']=="bflux" ? "checked" : "" ?>><label class="ms-2" for="theme4">Sombre</label>
+        </div>
         
       </div>
 
-      <h2 class="h2Titre"><button type="submit" class="submit d-block mx-auto mt-3" id="submit" name="submit">valider</button> </h2>
+      <h2 class="h2Titre"><button type="submit" class="submit d-block mx-auto mt-1" id="submit" name="submit">valider</button> </h2>
 </div>
       </form>
     </div>
