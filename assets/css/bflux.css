@@ -1,15 +1,22 @@
 /* The sidebar menu */
 .sidebar {
-  height: 100%; /* 100% Full-height */
-  width: 0; /* 0 width - change this with JavaScript */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Stay on top */
+  height: 100%;
+  /* 100% Full-height */
+  width: 0;
+  /* 0 width - change this with JavaScript */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Stay on top */
   top: 0;
   left: 0;
   background-color: #408e99;
-  overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 60px; /* Place content 60px from the top */
-  transition: 0.3s; /* 0.5 second transition effect to slide in the sidebar */
+  overflow-x: hidden;
+  /* Disable horizontal scroll */
+  padding-top: 60px;
+  /* Place content 60px from the top */
+  transition: 0.3s;
+  /* 0.5 second transition effect to slide in the sidebar */
   font-family: Montserrat;
   src: url("../fonts/Montserrat.ttf") format("TrueType");
 }
@@ -23,7 +30,7 @@
   display: block;
   font-family: Montserrat;
   src: url("../fonts/Montserrat.ttf") format("TrueType");
-  
+
 }
 
 /* When you mouse over the navigation links, change their color */
@@ -39,7 +46,7 @@
   font-size: 36px;
   margin-left: 50px;
   outline: none;
-    border-style: none;
+  border-style: none;
 }
 
 /* The button used to open the sidebar */
@@ -59,8 +66,9 @@
 
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
 #main {
-  transition: margin-left .5s; /* If you want a transition effect */
- 
+  transition: margin-left .5s;
+  /* If you want a transition effect */
+
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
@@ -68,72 +76,84 @@
   .sidebar {padding-top: 15px;}
   .sidebar a {font-size: 18px;}
 } */
-  @font-face {
-    font-family: BebasNeue-Regular;
-    src: url("../fonts/BebasNeue-Regular.otf") format("OpenType");
-  }
-  @font-face {
-    font-family:  Helvetica;
-    src: url("../fonts/Helvetica.ttf") format("TrueType");
-  }
-  
-  .h2Titre{
- 
-    color: #ffffff;
-    text-align: center;
-    font-family: Hanson;
-    src: url("../fonts/Hanson") format("OpenType");
-  }
-  /* banner */
-  #main{
-    background: linear-gradient(176deg, rgba(0,0,0,1) 0%, rgba(14,53,60,1) 100%);
-    color: #ffffff;
-    font-family: Montserrat;
-    src: url("../fonts/Montserrat.ttf") format("TrueType");
-    display: block;
-    margin: auto;
-    display: block;
-    margin: auto;
-    
-  }
-  .banner{
-    text-align: center;
-  }
-  .banner h1{
-    font-size: 100px;
-    font-family: Hanson;
-    src: url("../fonts/Hanson") format("OpenType");
-  }
-  .banner h5{
-    font-size: 50px;
-  }
-  .btnCard{
-    background-color: rgb(255, 255, 255);
-    color: #222222;
-    display: block;
-    margin: auto;
-    outline: none !important;
-    border-radius: 20px;
-    border: none;
-    width: 100px;
-  }
-  .card-body{
-    text-align: center; 
-    background-color: #22607d;
-    color: #f1f1f1;
-    font-family: Montserrat;
-    src: url("../fonts/Montserrat.ttf") format("TrueType");
-  
-  }
-.card-title, .card-subtitle{
- font-size: 15px;
+@font-face {
+  font-family: BebasNeue-Regular;
+  src: url("../fonts/BebasNeue-Regular.otf") format("OpenType");
 }
-.modal{
-  color: #222222; 
+
+@font-face {
+  font-family: Helvetica;
+  src: url("../fonts/Helvetica.ttf") format("TrueType");
+}
+
+.h2Titre {
+
+  color: #ffffff;
+  text-align: center;
+  font-family: Hanson;
+  src: url("../fonts/Hanson") format("OpenType");
+}
+
+/* banner */
+#main {
+  background: linear-gradient(176deg, rgba(0, 0, 0, 1) 0%, rgba(14, 53, 60, 1) 100%);
+  color: #ffffff;
+  font-family: Montserrat;
+  src: url("../fonts/Montserrat.ttf") format("TrueType");
+  display: block;
+  margin: auto;
+  display: block;
+  margin: auto;
+
+}
+
+.banner {
+  text-align: center;
+}
+
+.banner h1 {
+  font-size: 100px;
+  font-family: Hanson;
+  src: url("../fonts/Hanson") format("OpenType");
+}
+
+.banner h5 {
+  font-size: 50px;
+  color: rgb(0, 26, 255);
+}
+
+.btnCard {
+  background-color: rgb(255, 255, 255);
+  color: #222222;
+  display: block;
+  margin: auto;
+  outline: none !important;
+  border-radius: 20px;
+  border: none;
+  width: 100px;
+}
+
+.card-body {
+  text-align: center;
+  background-color: #22607d;
+  color: #f1f1f1;
+  font-family: Montserrat;
+  src: url("../fonts/Montserrat.ttf") format("TrueType");
+
+}
+
+.card-title,
+.card-subtitle {
+  font-size: 15px;
+}
+
+.modal {
+  color: #222222;
   font-family: Montserrat;
   src: url("../fonts/Montserrat.ttf") format("TrueType");
 }
-.submit{
+
+.submit {
   background-color: #408e99;
   color: #000000;
   font-family: Hanson;
@@ -142,10 +162,12 @@
   border: none;
 
 }
-.submit:hover{
+
+.submit:hover {
   background-color: #408e99;
 }
-.param{
+
+.param {
   color: black;
   /* font-family:  Helvetica;
     src: url("../fonts/Helvetica.ttf") format("TrueType"); */
@@ -153,27 +175,33 @@
   src: url("../fonts/BebasNeue-Regular.otf") format("OpenType");
   font-size: 20px;
 }
-.desciptionModal{
-    font-family:  Helvetica;
-    src: url("../fonts/Helvetica.ttf") format("TrueType");
+
+.desciptionModal {
+  font-family: Helvetica;
+  src: url("../fonts/Helvetica.ttf") format("TrueType");
 }
-.linkArticle{
+
+.linkArticle {
   color: white !important;
   background-color: black !important;
-  font-family:  Helvetica;
-    src: url("../fonts/Helvetica.ttf") format("TrueType");
-    border: none;
-    text-decoration: none;
-    border-radius: 20px;
+  font-family: Helvetica;
+  src: url("../fonts/Helvetica.ttf") format("TrueType");
+  border: none;
+  text-decoration: none;
+  border-radius: 20px;
 }
-.linkArticle:hover{
+
+.linkArticle:hover {
   color: #ffffff !important;
   background-color: white !important;
   border: 1px solid black;
+  margin: 20px !important;
 }
-.modalClose:hover{
+
+.modalClose:hover {
   color: #000000 !important;
 }
+
 @media screen and (max-width: 700px) {
   .sidebar {
     width: 50%;
@@ -181,19 +209,55 @@
     position: fixed;
     font-size: 10px
   }
-  .sidebar a {float: left;}
-  .banner{
-    text-align:center;
+
+  .sidebar a {
+    float: left;
   }
-  .banner h1{
+
+  .banner {
+    text-align: center;
+  }
+
+  .banner h1 {
     font-size: 60px;
     font-family: Hanson;
     src: url("../fonts/Hanson") format("OpenType");
   }
-  .banner h5{
+
+  .banner h5 {
     font-size: 30px;
   }
 }
-.card-img-top{
+
+.card-img-top {
   filter: grayscale(100%)
+}
+
+
+@media screen and (max-width: 450px) {
+  .sidebar {
+
+    height: 100vh;
+    position: fixed;
+    font-size: 10px
+  }
+
+  .sidebar a {
+    float: left;
+  }
+
+  .banner h1 {
+    font-size: 30px;
+    text-align: center;
+  }
+
+  .banner h5 {
+    font-size: 20px;
+    text-align: start;
+  }
+}
+
+.cardheader {
+  color: rgb(0, 26, 255);
+  margin: 5px;
 }

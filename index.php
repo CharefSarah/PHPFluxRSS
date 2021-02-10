@@ -12,7 +12,23 @@ require_once("controller/controller.php");
   <title>NETFLUX</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="assets/css/girly.css" rel="stylesheet">
+  <?php
+    if(isset($_POST['submit'])){
+      if(isset($_POST['theme']) && $_POST['theme'] == "default"){?>
+          <link href="assets/css/style.css" rel="stylesheet">
+      <?php
+      }elseif(isset($_POST['theme']) && $_POST['theme'] == "licorne"){?>
+        <link href="assets/css/girly.css" rel="stylesheet">
+      <?php
+      }elseif(isset($_POST['theme']) && $_POST['theme'] == "dark"){?>
+        <link href="assets/css/bflux.css" rel="stylesheet">
+      <?php
+      }
+    }else{?>
+      <link href="assets/css/style.css" rel="stylesheet">
+    <?php
+    }
+  ?>
   <link rel="icon" href="assets/img/icon_1.ico">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
@@ -47,13 +63,13 @@ require_once("controller/controller.php");
       <h2 class="h2Titre mt-3">Nombre d'articles</h2>
       <div class="ms-5 p-0 mt-3 param">
         <div class="radio2" >
-          <input type="radio" name="choix" id="choix" value="5" required><label class="ms-2" >5</label>
+          <input type="radio" name="choix" id="choix1" value="5" required><label class="ms-2" for="choix1">5</label>
         </div>
         <div class="radio2">
-          <input type="radio" name="choix" id="choix2" value="10"><label class="ms-2" > 10</label>
+          <input type="radio" name="choix" id="choix2" value="10"><label class="ms-2" for="choix2"> 10</label>
         </div>
         <div class="radio2">
-        <input type="radio" name="choix" id="choix3" value="15"><label class="ms-2" >Tout</label>
+        <input type="radio" name="choix" id="choix3" value="15"><label class="ms-2" for="choix3">Tout</label>
         </div>
         
       </div>
@@ -61,13 +77,13 @@ require_once("controller/controller.php");
       <h2 class="h2Titre mt-3">Thèmes</h2>
       <div class="ms-5 p-0 mt-3 param">
         <div class="radio2" >
-          <input type="radio" name="choix" id="choix" value="default"><label class="ms-2" >Default</label>
+          <input type="radio" name="theme" id="theme1" value="default"><label class="ms-2" for="theme1">Default</label>
         </div>
         <div class="radio2">
-          <input type="radio" name="choix" id="choix2" value="licorne"><label class="ms-2" >Licorne</label>
+          <input type="radio" name="theme" id="theme2" value="licorne"><label class="ms-2" for="theme2">Licorne</label>
         </div>
         <div class="radio2">
-          <input type="radio" name="choix" id="choix3" value="jacky"><label class="ms-2" >Jacky Tuning</label>
+          <input type="radio" name="theme" id="theme3" value="dark"><label class="ms-2" for="theme3">dark</label>
         </div>
         
       </div>
@@ -78,20 +94,15 @@ require_once("controller/controller.php");
     </div>
   
     <div id="main" class="justify-content-center">
-      <button class="openbtn" onclick="openNav()">&#9776; </button>
+      <button class="openbtn" id="btnOpen"  onclick="openNav()" >&#9776; </button>
     <?php
-
-    // $url = "https://www.01net.com/rss/jeux-video/";
-    // $rss = simplexml_load_file($url);
-     //echo '<pre>';
-    // print_r($rss);
     ?>
 
         <div class="container">
             <div class="row justify-content-center">
                 <div class="banner">
                     <h1>NETFLUX</h1>
-                    <h5 class="text-start ms-5"><?= $rss->channel->title ?></h5>
+                    <h5 class="ms-5"><?= $rss->channel->title ?></h5>
                 </div>
                 <?php        
                     setlocale(LC_TIME, "fra.UTF8");
@@ -111,7 +122,7 @@ require_once("controller/controller.php");
                             </div>
                             <div class="card-body text-center">
                                 <h6 class="card-title mt-4 mb-4"><?= $rss->channel->item[$i]->title ?></h6>
-                                <button type="button" class="btnCard" data-bs-toggle="modal" data-bs-target="#card<?=$i?>">Infos</button>
+                                <button type="button" class="btnCard my-auto" data-bs-toggle="modal" data-bs-target="#card<?=$i?>">Infos</button>
                             </div>
                         </div>
 
@@ -133,7 +144,7 @@ require_once("controller/controller.php");
                                         </div>
                                         <div class="col-md-6 text-end">
                                         <a href="<?= $rss->channel->item[$i]->link ?>" target="_blank">
-                                            <button class="btn linkArticle mx-auto">Lien</button>
+                                            <button class="btn linkArticle mx-auto">Accéder à l'article</button>
                                             </a>
                                         </div>
                                     </div>
@@ -147,6 +158,6 @@ require_once("controller/controller.php");
 </body>
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
-<script src="assets/js/script.js" async defer></script>
+<script src="assets/js/script.js?v=2"></script>
 
 </html>

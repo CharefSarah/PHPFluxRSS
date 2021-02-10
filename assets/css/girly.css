@@ -13,6 +13,7 @@
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 60px; /* Place content 60px from the top */
   transition: 0.3s; /* 0.5 second transition effect to slide in the sidebar */
+  background-image: url(../assets/img/cheval.png);
 }
 
 /* The sidebar links */
@@ -136,6 +137,7 @@ background-size: 1800% 1800%;
     outline: none !important;
     border-radius: 20px;
     border: none;
+    width: 100px;
   }
   .card-body{
     text-align: center; 
@@ -215,3 +217,64 @@ background-size: 1800% 1800%;
 {
 filter: hue-rotate(90deg)
 }
+@media screen and (max-width: 450px){
+  .sidebar {
+   
+    height: 100vh;
+    position: fixed;
+    font-size: 10px
+  }
+  .sidebar a {float: left;}
+  
+  .banner h1{
+    font-size: 40px;
+    text-align:center;
+  }
+  .banner h5{
+    font-size: 20px;
+    text-align:start;
+  }
+} 
+
+
+
+
+@media screen and (max-width: 700px) {
+  .sidebar {
+    
+    height: 100vh;
+    position: fixed;
+    font-size: 10px
+  }
+  .sidebar a {float: left;}
+  .banner{
+    text-align:start;
+  }
+  .banner h1{
+    font-size: 60px;
+    text-align:center;
+  }
+  .banner h5{
+    font-size: 30px;
+    text-align:start;
+    margin-left: 60px;
+  }
+}
+@media screen and (max-width: 450px){
+  .sidebar {
+   
+    height: 100vh;
+    position: fixed;
+    font-size: 10px
+  }
+  .sidebar a {float: left;}
+  
+  .banner h1{
+    font-size: 40px;
+    text-align:center;
+  }
+  .banner h5{
+    font-size: 20px;
+    text-align:start;
+  }
+} 
