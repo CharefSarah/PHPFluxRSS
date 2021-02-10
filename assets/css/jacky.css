@@ -1,0 +1,208 @@
+/* The sidebar menu */
+.sidebar {
+    height: 100vh; /* 100% Full-height */
+    width: 0;/* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0;
+    left: 0;
+    background-color: white; /* Black*/
+    overflow-x: hidden;
+   
+     /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.3s; /* 0.5 second transition effect to slide in the sidebar */
+    
+  }
+  
+  /* The sidebar links */
+  .sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #E50914;
+    display: block;
+  }
+  
+  /* When you mouse over the navigation links, change their color */
+  .sidebar a:hover {
+    color: black;
+  }
+  
+  /* Position and style the close button (top right corner) */
+  .sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  /* The button used to open the sidebar */
+  .openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: white;
+    color: #E50914;
+    padding: 10px 15px;
+    border: none;
+  }
+  
+  .openbtn:hover {
+    background-color: black;
+    border: none;
+  }
+  
+  
+  
+  /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+  /* @media screen and (max-height: 450px) {
+    .sidebar {padding-top: 15px;}
+    .sidebar a {font-size: 18px;}
+  } */
+    @font-face {
+      font-family: BebasNeue-Regular;
+      src: url("../fonts/BebasNeue-Regular.otf") format("OpenType");
+    }
+    @font-face {
+      font-family:  Helvetica;
+      src: url("../fonts/Helvetica.ttf") format("TrueType");
+    }
+    
+    .h2Titre{
+      background-color: black;
+      color: #E50914;
+      text-align: center;
+      font-family: BebasNeue-Regular;
+      src: url("../fonts/BebasNeue-Regular.otf") format("OpenType");
+    }
+    /* banner */
+    #main{
+      transition: margin-left .5s;
+      background-image: url(../img/jacky-tuning.jpg);
+      background-size: contain;
+      background-repeat: no-repeat;
+      height: 100vh;
+      width: 100%;
+      color: #E50914;
+      font-family: BebasNeue-Regular;
+      src: url("../fonts/BebasNeue-Regular.otf") format("OpenType");
+      display: block;
+      margin: auto;
+     
+    }
+    .banner{
+      text-align: center;
+    }
+    .banner h1{
+      font-size: 100px;
+    }
+    .banner h5{
+      font-size: 50px;
+      text-align: start;
+    }
+    .btnCard{
+      background-color: rgb(255, 255, 255);
+      color: #222222;
+      display: block;
+      margin: auto;
+      outline: none !important;
+      border-radius: 20px;
+      border: none;
+    }
+    .card-body{
+      text-align: center; 
+      background-color:#222222 ;
+      color: #f1f1f1;
+      font-family:  Helvetica;
+      src: url("../fonts/Helvetica.ttf") format("TrueType");
+    }
+  .card-title, .card-subtitle{
+   font-size: 15px;
+  }
+  .modal{
+    color: #222222; 
+    font-family:  Helvetica;
+    src: url("../fonts/Helvetica.ttf") format("TrueType");
+  }
+  .submit{
+    background-color: black;
+    color: #E50914;
+    font-family: BebasNeue-Regular;
+    src: url("../fonts/BebasNeue-Regular.otf") format("OpenType");
+    border-radius: 20px;
+    border: none;
+  
+  }
+  .submit:hover{
+    background-color: white;;
+  }
+  .param{
+    color: black;
+    /* font-family:  Helvetica;
+      src: url("../fonts/Helvetica.ttf") format("TrueType"); */
+    font-family: BebasNeue-Regular;
+    src: url("../fonts/BebasNeue-Regular.otf") format("OpenType");
+    font-size: 20px;
+  }
+  .desciptionModal{
+      font-family:  Helvetica;
+      src: url("../fonts/Helvetica.ttf") format("TrueType");
+  }
+  .linkArticle{
+    color: white !important;
+    background-color: black !important;
+    font-family:  Helvetica;
+      src: url("../fonts/Helvetica.ttf") format("TrueType");
+      border: none;
+      text-decoration: none;
+      border-radius: 20px;
+  }
+  .linkArticle:hover{
+    color: #E50914 !important;
+    background-color: white !important;
+    border: 1px solid black;
+  }
+  .modalClose:hover{
+    color: #E50914 !important;
+  }
+  
+  @media screen and (max-width: 700px) {
+    .sidebar {
+      
+      height: 100vh;
+      position: fixed;
+      font-size: 10px
+    }
+    .sidebar a {float: left;}
+    .banner{
+      text-align:start;
+    }
+    .banner h1{
+      font-size: 60px;
+      text-align:center;
+    }
+    .banner h5{
+      font-size: 30px;
+      text-align:start;
+      margin-left: 60px;
+    }
+  }
+  @media screen and (max-width: 450px){
+    .sidebar {
+     
+      height: 100vh;
+      position: fixed;
+      font-size: 10px
+    }
+    .sidebar a {float: left;}
+    
+    .banner h1{
+      font-size: 40px;
+      text-align:center;
+    }
+    .banner h5{
+      font-size: 20px;
+      text-align:start;
+    }
+  } 

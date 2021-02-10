@@ -21,11 +21,11 @@ require_once("controller/controller.php");
         <link href="assets/css/style.css" rel="stylesheet">
       <?php
       }elseif(isset($_POST['theme']) && $_POST['theme'] == "jacky"){?>
-        <link href="assets/css/style.css" rel="stylesheet">
+        <link href="assets/css/jacky.css" rel="stylesheet">
       <?php
       }
     }else{?>
-      <link href="assets/css/style.css" rel="stylesheet">
+      <link href="assets/css/jacky.css" rel="stylesheet">
     <?php
     }
   ?>
@@ -102,7 +102,7 @@ require_once("controller/controller.php");
             <div class="row justify-content-center">
                 <div class="banner">
                     <h1>NETFLUX</h1>
-                    <h5 class="ms-5"><?= $rss->channel->title ?></h5>
+                    <h5 class="ms-5"><?= isset($_POST['submit']) && isset($_POST['choix']) ? $rss->channel->title : "" ?></h5>
                 </div>
                 <?php        
                     setlocale(LC_TIME, "fra.UTF8");

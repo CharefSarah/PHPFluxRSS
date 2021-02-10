@@ -11,7 +11,7 @@ if (isset($_POST['submit'])) {
         $nmbCards = 15;
     }
 } else{
-    $nmbCards = 10;}
+    $nmbCards = 0;}
 
 
 if(isset($_POST['submit']) && isset($_POST['flux'])){
