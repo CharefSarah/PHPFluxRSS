@@ -13,23 +13,23 @@ require_once("controller/controller.php");
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <?php
-    if(isset($_POST['submit'])){
-      if(isset($_POST['theme']) && $_POST['theme'] == "default"){?>
+    if(isset($_POST['submit']) && isset($_COOKIE['theme'])){
+      if(isset($_COOKIE['theme']) && $_COOKIE['theme'] == "default"){?>
           <link href="assets/css/style.css" rel="stylesheet">
       <?php
-      }elseif(isset($_POST['theme']) && $_POST['theme'] == "licorne"){?>
+      }elseif(isset($_COOKIE['theme']) && $_COOKIE['theme'] == "licorne"){?>
         <link href="assets/css/girly.css" rel="stylesheet">
       <?php
-      }elseif(isset($_POST['theme']) && $_POST['theme'] == "jacky"){?>
+      }elseif(isset($_COOKIE['theme']) && $_COOKIE['theme'] == "jacky"){?>
         <link href="assets/css/jacky.css" rel="stylesheet">
       <?php
       }
-      elseif(isset($_POST['theme']) && $_POST['theme'] == "bflux"){?>
+      elseif(isset($_COOKIE['theme']) && $_COOKIE['theme'] == "bflux"){?>
         <link href="assets/css/bflux.css" rel="stylesheet">
       <?php
       }
     }else{?>
-      <link href="assets/css/jacky.css" rel="stylesheet">
+      <link href="assets/css/style.css" rel="stylesheet">
     <?php
     }
   ?>
@@ -48,32 +48,32 @@ require_once("controller/controller.php");
       <div class="ms-5 p-0 param">
         
         <div class="radio">
-          <input type="radio" name="flux" id="flux1" value="https://www.01net.com/rss/jeux-video/" <?= isset($_POST['flux']) && $_POST['flux']=="https://www.01net.com/rss/jeux-video/" ? "checked" : "" ?>required><label class="ms-2" for="flux1">Jeux vidéo</label>
+          <input type="radio" name="flux" id="flux1" value="https://www.01net.com/rss/jeux-video/" <?= isset($_COOKIE['flux']) && $_COOKIE['flux']=="https://www.01net.com/rss/jeux-video/" ? "checked" : "" ?>required><label class="ms-2" for="flux1">Jeux vidéo</label>
         </div>
           <div class="radio">
-            <input type="radio" name="flux" id="flux2" value="https://www.01net.com/rss/actualites/technos/" <?= isset($_POST['flux']) && $_POST['flux']=="https://www.01net.com/rss/actualites/technos/" ? "checked" : "" ?>><label class="ms-2" for="flux2">Technos</label>
+            <input type="radio" name="flux" id="flux2" value="https://www.01net.com/rss/actualites/technos/" <?= isset($_COOKIE['flux']) && $_COOKIE['flux']=="https://www.01net.com/rss/actualites/technos/" ? "checked" : "" ?>><label class="ms-2" for="flux2">Technos</label>
           </div>
           <div class="radio">
-            <input type="radio" name="flux" id="flux3" value="https://www.01net.com/rss/photo/" <?= isset($_POST['flux']) && $_POST['flux']=="https://www.01net.com/rss/photo/" ? "checked" : "" ?>><label class="ms-2" for="flux3">Photo</label>
+            <input type="radio" name="flux" id="flux3" value="https://www.01net.com/rss/photo/" <?= isset($_COOKIE['flux']) && $_COOKIE['flux']=="https://www.01net.com/rss/photo/" ? "checked" : "" ?>><label class="ms-2" for="flux3">Photo</label>
           </div>
           <div class="radio">
-            <input type="radio" name="flux" id="flux4" value="https://www.01net.com/rss/actualites/culture-medias/" <?= isset($_POST['flux']) && $_POST['flux']=="https://www.01net.com/rss/actualites/culture-medias/" ? "checked" : "" ?>><label class="ms-2" for="flux4">Culture médias</label>
+            <input type="radio" name="flux" id="flux4" value="https://www.01net.com/rss/actualites/culture-medias/" <?= isset($_COOKIE['flux']) && $_COOKIE['flux']=="https://www.01net.com/rss/actualites/culture-medias/" ? "checked" : "" ?>><label class="ms-2" for="flux4">Culture médias</label>
           </div>
           <div class="radio">
-            <input type="radio" name="flux" id="flux5" value="https://www.01net.com/rss/actualites/buzz-societe/" <?= isset($_POST['flux']) && $_POST['flux']=="https://www.01net.com/rss/actualites/buzz-societe/" ? "checked" : "" ?>><label class="ms-2" for="flux5">Buzz</label>
+            <input type="radio" name="flux" id="flux5" value="https://www.01net.com/rss/actualites/buzz-societe/" <?= isset($_COOKIE['flux']) && $_COOKIE['flux']=="https://www.01net.com/rss/actualites/buzz-societe/" ? "checked" : "" ?>><label class="ms-2" for="flux5">Buzz</label>
           </div>
       </div>
    
       <h2 class="h2Titre mt-3">Nombre d'articles</h2>
       <div class="ms-5 p-0 mt-3 param">
         <div class="radio2" >
-          <input type="radio" name="choix" id="choix1" value="5" <?= isset($_POST['choix']) && $_POST['choix']=="5" ? "checked" : "" ?> required><label class="ms-2" for="choix1">5</label>
+          <input type="radio" name="choix" id="choix1" value="5" <?= isset($_COOKIE['choix']) && $_COOKIE['choix']=="5" ? "checked" : "" ?> required><label class="ms-2" for="choix1">5</label>
         </div>
         <div class="radio2">
-          <input type="radio" name="choix" id="choix2" value="10" <?= isset($_POST['choix']) && $_POST['choix']=="10" ? "checked" : "" ?>><label class="ms-2" for="choix2"> 10</label>
+          <input type="radio" name="choix" id="choix2" value="10" <?= isset($_COOKIE['choix']) && $_COOKIE['choix']=="10" ? "checked" : "" ?>><label class="ms-2" for="choix2"> 10</label>
         </div>
         <div class="radio2">
-        <input type="radio" name="choix" id="choix3" value="15" <?= isset($_POST['choix']) && $_POST['choix']=="15" ? "checked" : "" ?>><label class="ms-2" for="choix3">Tout</label>
+        <input type="radio" name="choix" id="choix3" value="15" <?= isset($_COOKIE['choix']) && $_COOKIE['choix']=="15" ? "checked" : "" ?>><label class="ms-2" for="choix3">Tout</label>
         </div>
         
       </div>
@@ -81,16 +81,16 @@ require_once("controller/controller.php");
       <h2 class="h2Titre mt-3">Thèmes</h2>
       <div class="ms-5 p-0 mt-3 param">
         <div class="radio2" >
-          <input type="radio" name="theme" id="theme1" value="default" <?= isset($_POST['theme']) && $_POST['theme']=="default" ? "checked" : "" ?>><label class="ms-2" for="theme1">Default</label>
+          <input type="radio" name="theme" id="theme1" value="default" <?= isset($_COOKIE['theme']) && $_COOKIE['theme']=="default" ? "checked" : "" ?>><label class="ms-2" for="theme1">Default</label>
         </div>
         <div class="radio2">
-          <input type="radio" name="theme" id="theme2" value="licorne" <?= isset($_POST['theme']) && $_POST['theme']=="licorne" ? "checked" : "" ?>><label class="ms-2" for="theme2">Licorne</label>
+          <input type="radio" name="theme" id="theme2" value="licorne" <?= isset($_COOKIE['theme']) && $_COOKIE['theme']=="licorne" ? "checked" : "" ?>><label class="ms-2" for="theme2">Licorne</label>
         </div>
         <div class="radio2">
-          <input type="radio" name="theme" id="theme3" value="jacky" <?= isset($_POST['theme']) && $_POST['theme']=="jacky" ? "checked" : "" ?>><label class="ms-2" for="theme3">Jacky Tuning</label>
+          <input type="radio" name="theme" id="theme3" value="jacky" <?= isset($_COOKIE['theme']) && $_COOKIE['theme']=="jacky" ? "checked" : "" ?>><label class="ms-2" for="theme3">Jacky Tuning</label>
         </div>
         <div class="radio2">
-          <input type="radio" name="theme" id="theme4" value="bflux" <?= isset($_POST['theme']) && $_POST['theme']=="bflux" ? "checked" : "" ?>><label class="ms-2" for="theme4">Sombre</label>
+          <input type="radio" name="theme" id="theme4" value="bflux" <?= isset($_COOKIE['theme']) && $_COOKIE['theme']=="bflux" ? "checked" : "" ?>><label class="ms-2" for="theme4">Sombre</label>
         </div>
         
       </div>
@@ -109,7 +109,7 @@ require_once("controller/controller.php");
             <div class="row justify-content-center">
                 <div class="banner">
                     <h1>NETFLUX</h1>
-                    <h5 class="ms-5"><?= isset($_POST['submit']) && isset($_POST['choix']) ? $rss->channel->title : "" ?></h5>
+                    <h5 class="ms-5"><?=isset($_COOKIE['choix']) ? $rss->channel->title : "" ?></h5>
                 </div>
                 <?php        
                     setlocale(LC_TIME, "fra.UTF8");
