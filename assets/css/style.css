@@ -1,15 +1,18 @@
 /* The sidebar menu */
 .sidebar {
-  height: 100%; /* 100% Full-height */
-  width: 0; /* 0 width - change this with JavaScript */
+  height: 100vh; /* 100% Full-height */
+  width: 0;/* 0 width - change this with JavaScript */
   position: fixed; /* Stay in place */
   z-index: 1; /* Stay on top */
   top: 0;
   left: 0;
   background-color: white; /* Black*/
-  overflow-x: hidden; /* Disable horizontal scroll */
+  overflow-x: hidden;
+ 
+   /* Disable horizontal scroll */
   padding-top: 60px; /* Place content 60px from the top */
   transition: 0.3s; /* 0.5 second transition effect to slide in the sidebar */
+  
 }
 
 /* The sidebar links */
@@ -19,8 +22,6 @@
   font-size: 25px;
   color: #E50914;
   display: block;
-  
-  
 }
 
 /* When you mouse over the navigation links, change their color */
@@ -52,11 +53,7 @@
   border: none;
 }
 
-/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
-#main {
-  transition: margin-left .5s; /* If you want a transition effect */
- 
-}
+
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 /* @media screen and (max-height: 450px) {
@@ -81,13 +78,13 @@
   }
   /* banner */
   #main{
+    transition: margin-left .5s;
     background-color: black;
     color: #E50914;
     font-family: BebasNeue-Regular;
     src: url("../fonts/BebasNeue-Regular.otf") format("OpenType");
     display: block;
     margin: auto;
-    
   }
   .banner{
     text-align: center;
@@ -97,6 +94,7 @@
   }
   .banner h5{
     font-size: 50px;
+    text-align: start;
   }
   .btnCard{
     background-color: rgb(255, 255, 255);
@@ -163,21 +161,43 @@
 .modalClose:hover{
   color: #E50914 !important;
 }
+
 @media screen and (max-width: 700px) {
   .sidebar {
-    width: 50%;
-    height: auto;
+    
+    height: 100vh;
     position: fixed;
     font-size: 10px
   }
   .sidebar a {float: left;}
   .banner{
-    text-align:center;
+    text-align:start;
   }
   .banner h1{
     font-size: 60px;
+    text-align:center;
   }
   .banner h5{
     font-size: 30px;
+    text-align:start;
+    margin-left: 60px;
   }
 }
+@media screen and (max-width: 450px){
+  .sidebar {
+   
+    height: 100vh;
+    position: fixed;
+    font-size: 10px
+  }
+  .sidebar a {float: left;}
+  
+  .banner h1{
+    font-size: 40px;
+    text-align:center;
+  }
+  .banner h5{
+    font-size: 20px;
+    text-align:start;
+  }
+} 
