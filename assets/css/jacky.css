@@ -7,8 +7,9 @@
     top: 0;
     left: 0;
     background-color: white; /* Black*/
+    background-image: url(../img/zebre.png);
     overflow-x: hidden;
-   
+    
      /* Disable horizontal scroll */
     padding-top: 60px; /* Place content 60px from the top */
     transition: 0.3s; /* 0.5 second transition effect to slide in the sidebar */
@@ -20,13 +21,13 @@
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
-    color: #E50914;
+    color: rgb(255, 0, 128);
     display: block;
   }
   
   /* When you mouse over the navigation links, change their color */
   .sidebar a:hover {
-    color: black;
+    color: white;
   }
   
   /* Position and style the close button (top right corner) */
@@ -42,8 +43,8 @@
   .openbtn {
     font-size: 20px;
     cursor: pointer;
-    background-color: white;
-    color: #E50914;
+    background-color: rgb(255, 0, 128);
+    color: white;
     padding: 10px 15px;
     border: none;
   }
@@ -70,8 +71,8 @@
     }
     
     .h2Titre{
-      background-color: black;
-      color: #E50914;
+      background-color: rgb(255, 0, 128);
+      color: black;
       text-align: center;
       font-family: BebasNeue-Regular;
       src: url("../fonts/BebasNeue-Regular.otf") format("OpenType");
@@ -81,14 +82,14 @@
       transition: margin-left .5s;
       background-image: url(../img/jacky-tuning.jpg);
       background-size: contain;
-      background-repeat: no-repeat;
+      background-repeat: repeat;
       height: 100vh;
-      width: 100%;
-      color: #E50914;
+      color: rgb(255, 0, 128);
       font-family: BebasNeue-Regular;
       src: url("../fonts/BebasNeue-Regular.otf") format("OpenType");
       display: block;
       margin: auto;
+      background-color: pink !important;
      
     }
     .banner{
@@ -112,7 +113,7 @@
     }
     .card-body{
       text-align: center; 
-      background-color:#222222 ;
+      background-color:rgb(255, 0, 128) ;
       color: #f1f1f1;
       font-family:  Helvetica;
       src: url("../fonts/Helvetica.ttf") format("TrueType");
@@ -121,13 +122,14 @@
    font-size: 15px;
   }
   .modal{
-    color: #222222; 
+    
+   
     font-family:  Helvetica;
     src: url("../fonts/Helvetica.ttf") format("TrueType");
   }
   .submit{
-    background-color: black;
-    color: #E50914;
+    background-color: rgb(255, 0, 128);;
+    color: black;
     font-family: BebasNeue-Regular;
     src: url("../fonts/BebasNeue-Regular.otf") format("OpenType");
     border-radius: 20px;
@@ -138,7 +140,7 @@
     background-color: white;;
   }
   .param{
-    color: black;
+    color: rgb(255, 0, 128);
     /* font-family:  Helvetica;
       src: url("../fonts/Helvetica.ttf") format("TrueType"); */
     font-family: BebasNeue-Regular;
@@ -148,6 +150,9 @@
   .desciptionModal{
       font-family:  Helvetica;
       src: url("../fonts/Helvetica.ttf") format("TrueType");
+      background-image: url(../img/leopard.jpg);
+      color: white; 
+      font-size: 30px;
   }
   .linkArticle{
     color: white !important;
