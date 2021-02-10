@@ -24,41 +24,61 @@ require_once("controller/controller.php");
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <div>
     <form method="POST">
-      <h2>Flux</h2>
-      <div class="radio">
-        <input type="radio" name="flux" id="flux1" value="https://www.01net.com/rss/jeux-video/" required><label for="flux1">Jeux vidéo</label>
-      </div>
-      <div>
+      <h2 class="h2Titre mb-3 mt-3">Flux</h2>
+      <div class="ms-5 p-0 param">
+        
         <div class="radio">
-          <input type="radio" name="flux" id="flux2" value="https://www.01net.com/rss/actualites/technos/"><label for="flux2">Technos</label>
+          <input type="radio" name="flux" id="flux1" value="https://www.01net.com/rss/jeux-video/" required><label class="ms-2" for="flux1">Jeux vidéo</label>
         </div>
-        <div class="radio">
-          <input type="radio" name="flux" id="flux3" value="https://www.01net.com/rss/photo/"><label  for="flux3">Photo</label>
-        </div>
-        <div class="radio">
-          <input type="radio" name="flux" id="flux4" value="https://www.01net.com/rss/actualites/culture-medias/"><label  for="flux4">Culture médias</label>
-        </div>
-        <div class="radio">
-          <input type="radio" name="flux" id="flux5" value="https://www.01net.com/rss/actualites/buzz-societe/"><label  for="flux5">Buzz</label>
-        </div>
+          <div class="radio">
+            <input type="radio" name="flux" id="flux2" value="https://www.01net.com/rss/actualites/technos/"><label class="ms-2" for="flux2">Technos</label>
+          </div>
+          <div class="radio">
+            <input type="radio" name="flux" id="flux3" value="https://www.01net.com/rss/photo/"><label class="ms-2" for="flux3">Photo</label>
+          </div>
+          <div class="radio">
+            <input type="radio" name="flux" id="flux4" value="https://www.01net.com/rss/actualites/culture-medias/"><label class="ms-2" for="flux4">Culture médias</label>
+          </div>
+          <div class="radio">
+            <input type="radio" name="flux" id="flux5" value="https://www.01net.com/rss/actualites/buzz-societe/"><label class="ms-2" for="flux5">Buzz</label>
+          </div>
       </div>
    
-    <h2>Nombre d'articles</h2>
-    <div class="radio2" >
-      <label><input type="radio" name="choix" id="choix" value="5" required>5</label>
-    </div>
-    <div class="radio2">
-      <label><input type="radio" name="choix" id="choix2" value="10"> 10</label>
-    </div>
-    <div class="radio2">
-      <label><input type="radio" name="choix" id="choix3" value="15">Tout</label>
-    </div>
-  </div>
-  <button type="submit" class="submit" id="submit" name="submit">Envoyer</button> 
+      <h2 class="h2Titre mt-3">Nombre d'articles</h2>
+      <div class="ms-5 p-0 mt-3 param">
+        <div class="radio2" >
+          <input type="radio" name="choix" id="choix" value="5" required><label class="ms-2" >5</label>
+        </div>
+        <div class="radio2">
+          <input type="radio" name="choix" id="choix2" value="10"><label class="ms-2" > 10</label>
+        </div>
+        <div class="radio2">
+        <input type="radio" name="choix" id="choix3" value="15"><label class="ms-2" >Tout</label>
+        </div>
+        
+      </div>
+
+      <h2 class="h2Titre mt-3">Thèmes</h2>
+      <div class="ms-5 p-0 mt-3 param">
+        <div class="radio2" >
+          <input type="radio" name="choix" id="choix" value="default"><label class="ms-2" >Default</label>
+        </div>
+        <div class="radio2">
+          <input type="radio" name="choix" id="choix2" value="licorne"><label class="ms-2" >Licorne</label>
+        </div>
+        <div class="radio2">
+          <input type="radio" name="choix" id="choix3" value="jacky"><label class="ms-2" >Jacky Tuning</label>
+        </div>
+        
+      </div>
+
+      <h2 class="h2Titre"><button type="submit" class="submit d-block mx-auto mt-3" id="submit" name="submit">valider</button> </h2>
 </div>
-</form>
-  <div id="main" class="justify-content-center">
-    <button class="openbtn" onclick="openNav()">&#9776; </button>
+      </form>
+    </div>
+  
+    <div id="main" class="justify-content-center">
+      <button class="openbtn" onclick="openNav()">&#9776; </button>
     <?php
 
     // $url = "https://www.01net.com/rss/jeux-video/";
@@ -71,7 +91,7 @@ require_once("controller/controller.php");
             <div class="row justify-content-center">
                 <div class="banner">
                     <h1>NETFLUX</h1>
-                    <h5><?= $rss->channel->title ?></h5>
+                    <h5 class="text-start ms-5"><?= $rss->channel->title ?></h5>
                 </div>
                 <?php        
                     setlocale(LC_TIME, "fra.UTF8");
@@ -97,14 +117,14 @@ require_once("controller/controller.php");
 
                         <div class="modal fade" id="card<?= $i ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
-                                <div class="modal-content">
+                                <div class="modal-content desciptionModal">
                                     <div class="modal-header">
                                         <h5 class="modal-title"><?= $rss->channel->item[$i]->title ?></h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        <button type="button" class="btn-close modalClose" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>  
                                     <div class="modal-body">
                                         <img src="<?= $image[0]['url'] ?>" class="d-block img-fluid">
-                                        <p class="mt-4"><?=$jacky[0]?></p>
+                                        <p class="mt-4 desciptionModal"><?=$jacky[0]?></p>
                                         <hr>
                                     </div>
                                     <div class="row">
@@ -112,7 +132,9 @@ require_once("controller/controller.php");
                                             <span class="m-2"><?= $pub ?></span>
                                         </div>
                                         <div class="col-md-6 text-end">
-                                            <a href="<?= $rss->channel->item[$i]->link ?>" target="_blank" class="btn text-white bg-dark m-2">Lien</a>
+                                        <a href="<?= $rss->channel->item[$i]->link ?>" target="_blank">
+                                            <button class="btn linkArticle mx-auto">Lien</button>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
