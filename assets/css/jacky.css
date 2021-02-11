@@ -81,8 +81,8 @@
     #main{
       transition: margin-left .5s;
       background-image: url(../img/jacky-tuning.jpg);
-      background-size: contain;
-      background-repeat: repeat;
+    
+      background-repeat: no-repeat;
       height: 100vh;
       color: rgb(255, 0, 128);
       font-family: BebasNeue-Regular;
@@ -90,6 +90,8 @@
       display: block;
       margin: auto;
       background-color: pink !important;
+      background-attachment: fixed; 
+      background-size: cover;
      
     }
     .banner{
