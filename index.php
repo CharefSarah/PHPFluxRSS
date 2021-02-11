@@ -159,8 +159,8 @@ require_once("controller/controller.php");
     <footer class="foot">
         <div class="text-center p-3">
             © 2021 Copyright: Sarah Charef & Théo Lucas <br />
-            <a href="mentions.php">Mention légal </a>
-          </div>
+            <a href="mentions.php" class="mention">Mention légal </a>
+        </div>
     </footer>
     </div>
 </body>
