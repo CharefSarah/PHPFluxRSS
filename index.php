@@ -20,9 +20,6 @@ require_once("controller/controller.php");
       }elseif(isset($_POST['theme']) && $_POST['theme'] == "licorne"){?>
         <link href="assets/css/girly.css" rel="stylesheet">
       <?php
-      }elseif(isset($_POST['theme']) && $_POST['theme'] == "jacky"){?>
-        <link href="assets/css/jacky.css" rel="stylesheet">
-      <?php
       }
       elseif(isset($_POST['theme']) && $_POST['theme'] == "bflux"){?>
         <link href="assets/css/bflux.css" rel="stylesheet">
@@ -85,9 +82,6 @@ require_once("controller/controller.php");
         </div>
         <div class="radio2">
           <input type="radio" name="theme" id="theme2" value="licorne" <?= isset($_POST['theme']) && $_POST['theme']=="licorne" ? "checked" : "" ?>><label class="ms-2" for="theme2">Licorne</label>
-        </div>
-        <div class="radio2">
-          <input type="radio" name="theme" id="theme3" value="jacky" <?= isset($_POST['theme']) && $_POST['theme']=="jacky" ? "checked" : "" ?>><label class="ms-2" for="theme3">Jacky Tuning</label>
         </div>
         <div class="radio2">
           <input type="radio" name="theme" id="theme4" value="bflux" <?= isset($_POST['theme']) && $_POST['theme']=="bflux" ? "checked" : "" ?>><label class="ms-2" for="theme4">Sombre</label>
@@ -161,12 +155,14 @@ require_once("controller/controller.php");
                     <?php } ?>
             </div>
         </div>
-    </div>
+    
     <footer class="foot">
-          <div class="text-center p-3">
-              © 2021 Copyright: Sarah Charef & Théo Lucas <br />
-              <a href="mentions.php">Mention légal </a>
-      </footer>
+        <div class="text-center p-3">
+            © 2021 Copyright: Sarah Charef & Théo Lucas <br />
+            <a href="mentions.php">Mention légal </a>
+          </div>
+    </footer>
+    </div>
 </body>
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>

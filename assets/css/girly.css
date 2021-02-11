@@ -280,10 +280,17 @@ filter: hue-rotate(90deg)
 } 
 
 .foot{
-  background-color: rgb(255, 134, 174);
-  color: #000000;
+  background-color: rgb(255, 134, 174)  !important;
+  color: #000000 !important;
   }
-  
+  .foot a{
+    text-decoration: none !important;
+    color: #000000 !important;
+  }
+  .foot a:hover{
+    text-decoration: none !important;
+    color: white !important;
+  }
 
   .Card-header{
     background-color: #f355cc;

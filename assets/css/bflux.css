@@ -274,8 +274,16 @@
 
 
 .foot{
-  background-color:  rgba(14, 53, 60, 1);
-  color: #f1f1f1;
-  font-family: Montserrat;
-  src: url("../fonts/Montserrat.ttf") format("TrueType");
+  background-color:  rgba(14, 53, 60, 1) !important;
+  color: #f1f1f1 !important;
+  font-family: Montserrat !important;
+  src: url("../fonts/Montserrat.ttf") format("TrueType") !important;
+  }
+  .foot a{
+    text-decoration: none !important;
+    color: #f1f1f1 !important;
+  }
+  .foot a:hover{
+    text-decoration: none !important;
+    color: #000000 !important;
   }
