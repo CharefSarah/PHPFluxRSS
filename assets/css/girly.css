@@ -88,7 +88,7 @@
     src: url("../fonts/BebasNeue-Regular.otf") format("OpenType");
     display: block;
     margin: auto;
-    background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+    background: linear-gradient(124deg, #ff39ce, #ff008c, #e989c4, #80014f, #c489a6, #990047, #97237a, #dd00f3, #a00070);
 background-size: 1800% 1800%;
 
 -webkit-animation: rainbow 18s ease infinite;
@@ -277,3 +277,14 @@ filter: hue-rotate(90deg)
     text-align:start;
   }
 } 
+
+.foot{
+  background-color: rgb(255, 134, 174);
+  color: #000000;
+  }
+  
+
+  .Card-header{
+    background-color: #f355cc;
+color: #80014f;
+  }

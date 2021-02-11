@@ -15,7 +15,7 @@ require_once("controller/controller.php");
   <?php
     if(isset($_POST['submit']) && isset($_COOKIE['theme'])){
       if(isset($_COOKIE['theme']) && $_COOKIE['theme'] == "default"){?>
-          <link href="assets/css/style.css" rel="stylesheet">
+          <link href="assets/css/THEMENETFLUX.css" rel="stylesheet">
       <?php
       }elseif(isset($_COOKIE['theme']) && $_COOKIE['theme'] == "licorne"){?>
         <link href="assets/css/girly.css" rel="stylesheet">
@@ -29,7 +29,7 @@ require_once("controller/controller.php");
       <?php
       }
     }else{?>
-      <link href="assets/css/style.css" rel="stylesheet">
+      <link href="assets/css/THEMENETFLUX.css" rel="stylesheet">
     <?php
     }
   ?>
@@ -162,6 +162,10 @@ require_once("controller/controller.php");
             </div>
         </div>
     </div>
+    <footer class="foot">
+          <div class="text-center p-3">
+              © 2021 Copyright: Sarah Charef & Théo Lucas <br />
+              <a href="mentions.php">Mention légal </a>
 </body>
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>

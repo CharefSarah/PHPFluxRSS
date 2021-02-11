@@ -180,23 +180,22 @@
 
 .param {
   color: black;
-  /* font-family:  Helvetica;
-    src: url("../fonts/Helvetica.ttf") format("TrueType"); */
-  font-family: BebasNeue-Regular;
-  src: url("../fonts/BebasNeue-Regular.otf") format("OpenType");
+  font-family: Montserrat;
+  src: url("../fonts/Montserrat.ttf") format("TrueType");
+ 
   font-size: 20px;
 }
 
 .desciptionModal {
-  font-family: Helvetica;
-  src: url("../fonts/Helvetica.ttf") format("TrueType");
+  font-family: Montserrat;
+  src: url("../fonts/Montserrat.ttf") format("TrueType");
 }
 
 .linkArticle {
   color: white !important;
   background-color: black !important;
-  font-family: Helvetica;
-  src: url("../fonts/Helvetica.ttf") format("TrueType");
+  font-family: Montserrat;
+  src: url("../fonts/Montserrat.ttf") format("TrueType");
   border: none;
   text-decoration: none;
   border-radius: 20px;
@@ -272,3 +271,11 @@
   color: rgb(0, 26, 255);
   margin: 5px;
 }
+
+
+.foot{
+  background-color:  rgba(14, 53, 60, 1);
+  color: #f1f1f1;
+  font-family: Montserrat;
+  src: url("../fonts/Montserrat.ttf") format("TrueType");
+  }
