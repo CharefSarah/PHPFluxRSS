@@ -127,6 +127,7 @@
 .banner h5 {
   font-size: 50px;
   color: rgb(0, 26, 255);
+  text-align: start !important;
 }
 
 .btnCard {

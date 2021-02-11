@@ -15,18 +15,18 @@ require_once("controller/controller.php");
   <?php
     if(isset($_POST['submit'])){
       if(isset($_POST['theme']) && $_POST['theme'] == "default"){?>
-          <link href="assets/css/THEMENETFLUX.css" rel="stylesheet">
+          <link href="assets/css/THEMENETFLUX.css?rnb=132" rel="stylesheet">
       <?php
       }elseif(isset($_POST['theme']) && $_POST['theme'] == "licorne"){?>
-        <link href="assets/css/girly.css" rel="stylesheet">
+        <link href="assets/css/girly.css?rnb=132" rel="stylesheet">
       <?php
       }
       elseif(isset($_POST['theme']) && $_POST['theme'] == "bflux"){?>
-        <link href="assets/css/bflux.css" rel="stylesheet">
+        <link href="assets/css/bflux.css?rnb=132" rel="stylesheet">
       <?php
       }
     }else{?>
-      <link href="assets/css/THEMENETFLUX.css" rel="stylesheet">
+      <link href="assets/css/THEMENETFLUX.css?rnb=132" rel="stylesheet">
     <?php
     }
   ?>

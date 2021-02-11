@@ -128,6 +128,7 @@ background-size: 1800% 1800%;
   }
   .banner h5{
     font-size: 50px;
+    text-align: start !important;
   }
   .btnCard{
     background-color: rgb(255, 255, 255);
