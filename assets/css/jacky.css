@@ -82,7 +82,7 @@
       transition: margin-left .5s;
       background-image: url(../img/jacky-tuning.jpg);
       background-size: contain;
-      height: 100vh;
+      background-repeat:  repeat;
       color: rgb(255, 0, 128);
       font-family: BebasNeue-Regular;
       src: url("../fonts/BebasNeue-Regular.otf") format("OpenType");

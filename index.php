@@ -25,6 +25,10 @@ require_once("controller/controller.php");
         <link href="assets/css/bflux.css?rnb=132" rel="stylesheet">
       <?php
       }
+      elseif(isset($_POST['theme']) && $_POST['theme'] == "jacky"){?>
+        <link href="assets/css/jacky.css?rnb=132" rel="stylesheet">
+      <?php
+      }
     }else{?>
       <link href="assets/css/THEMENETFLUX.css?rnb=132" rel="stylesheet">
     <?php
@@ -85,6 +89,9 @@ require_once("controller/controller.php");
         </div>
         <div class="radio2">
           <input type="radio" name="theme" id="theme4" value="bflux" <?= isset($_POST['theme']) && $_POST['theme']=="bflux" ? "checked" : "" ?>><label class="ms-2" for="theme4">Sombre</label>
+        </div>
+        <div class="radio2">
+          <input type="radio" name="theme" id="theme3" value="jacky" <?= isset($_POST['theme']) && $_POST['theme']=="jacky" ? "checked" : "" ?>><label class="ms-2" for="theme3">Jacky Tuning</label>
         </div>
         
       </div>

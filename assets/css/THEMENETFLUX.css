@@ -126,9 +126,7 @@
   color: #E50914;
   font-family: BebasNeue-Regular;
   src: url("../fonts/BebasNeue-Regular.otf") format("OpenType");
-  border-radius: 20px;
   border: none;
-
 }
 .submit:hover{
   background-color: white;;
