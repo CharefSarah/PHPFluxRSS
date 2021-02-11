@@ -15,7 +15,7 @@ require_once("controller/controller.php");
   <?php
     if(isset($_POST['submit'])){
       if(isset($_POST['theme']) && $_POST['theme'] == "default"){?>
-          <link href="assets/css/style.css" rel="stylesheet">
+          <link href="assets/css/THEMENETFLUX.css" rel="stylesheet">
       <?php
       }elseif(isset($_POST['theme']) && $_POST['theme'] == "licorne"){?>
         <link href="assets/css/girly.css" rel="stylesheet">
