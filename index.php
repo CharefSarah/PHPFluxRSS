@@ -54,7 +54,7 @@ require_once("controller/controller.php");
             <input type="radio" name="flux" id="flux3" value="https://www.01net.com/rss/photo/" <?= isset($_POST['flux']) && $_POST['flux']=="https://www.01net.com/rss/photo/" ? "checked" : "" ?>><label class="ms-2" for="flux3">Photo</label>
           </div>
           <div class="radio">
-            <input type="radio" name="flux" id="flux4" value="https://www.01net.com/rss/actualites/culture-medias/" <?= isset($_POST['flux']) && $_POST['flux']=="https://www.01net.com/rss/actualites/culture-medias/" ? "checked" : "" ?>><label class="ms-2" for="flux4">Culture médias</label>
+            <input type="radio" name="flux" id="flux4" value="https://www.01net.com/rss/actualites/culture-medias/" <?= isset($_POST['flux']) && $_POST['flux']=="https://www.01net.com/rss/actualites/culture-medias/" ? "checked" : "" ?>><label class="ms-2" for="flux4">Médias</label>
           </div>
           <div class="radio">
             <input type="radio" name="flux" id="flux5" value="https://www.01net.com/rss/actualites/buzz-societe/" <?= isset($_POST['flux']) && $_POST['flux']=="https://www.01net.com/rss/actualites/buzz-societe/" ? "checked" : "" ?>><label class="ms-2" for="flux5">Buzz</label>
